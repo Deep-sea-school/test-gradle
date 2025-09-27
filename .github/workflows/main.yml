@@ -71,6 +71,16 @@ jobs:
           cd project
           npm install
 
+
+      - name: Install Android Build Tools43
+        run: |
+          sdkmanager "build-tools;33.0.3"
+        env:
+          ANDROID_HOME: ${{ env.ANDROID_HOME }}
+          ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
+
+
+
       - name: 111
         run: |
           cd project
