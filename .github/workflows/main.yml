@@ -37,7 +37,12 @@ jobs:
           cmdline-tools-version: 'latest'
 
       # Install Android Build Tools
-      cc
+      - name: Install Android Build Tools
+        run: |
+          sdkmanager "build-tools;33.0.2" "platform-tools" "platforms;android-33"
+        env:
+          ANDROID_HOME: ${{ env.ANDROID_HOME }}
+          ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
 
       # Set up Gradle
       - name: Set up Gradle
