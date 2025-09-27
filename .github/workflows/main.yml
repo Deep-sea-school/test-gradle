@@ -66,7 +66,7 @@ jobs:
           cd project
           npm install
 
-- name: Install Android Build Tools
+- name: Install Android Build Tools 892139890324
         run: |
           wget https://dl.google.com/android/repository/build-tools_r30.0.3-linux.zip
           unzip build-tools_r30.0.3-linux.zip -d /usr/local/lib/android/sdk/build-tools
