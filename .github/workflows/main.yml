@@ -39,7 +39,7 @@ jobs:
       # Install Android Build Tools
       - name: Install Android Build Tools
         run: |
-          sdkmanager "build-tools;33.0.2" "platform-tools" "platforms;android-33"
+          sdkmanager "build-tools;30.0.3" "platform-tools" "platforms;android-33"
         env:
           ANDROID_HOME: ${{ env.ANDROID_HOME }}
           ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
@@ -70,16 +70,6 @@ jobs:
         run: |
           cd project
           npm install
-
-      - name: Install Android Build Tools 892139890324
-        run: |
-          wget https://dl.google.com/android/repository/build-tools_r30.0.3-linux.zip
-          mkdir -p /usr/local/lib/android/sdk/build-tools/33.0.3
-          unzip build-tools_r30.0.3-linux.zip 'android-11/*' -d /usr/local/lib/android/sdk/build-tools/33.0.3
-          ls /usr/local/lib/android/sdk/build-tools
-        env:
-          ANDROID_HOME: ${{ env.ANDROID_HOME }}
-          ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
 
       # Run npm build
       - name: Build project
