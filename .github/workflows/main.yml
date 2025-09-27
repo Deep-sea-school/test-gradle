@@ -30,6 +30,13 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
 
+      # Set up Java 17
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+
       # Set up Android SDK and Build Tools
       - name: Set up Android SDK
         uses: android-actions/setup-android@v3
