@@ -71,6 +71,11 @@ jobs:
           cd project
           npm install
 
+      - name: 111
+        run: |
+          cd /usr/local/lib/android/sdk/build-tools
+          ls
+
       # Run npm build
       - name: Build project
         run: |
