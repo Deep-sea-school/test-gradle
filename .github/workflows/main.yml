@@ -73,7 +73,7 @@ jobs:
 
       - name: Print SDK
         run: |
-          cd /usr/local/lib/android/sdk
+          cd /usr/local/lib/android/sdk/build-tools
           ls
 
       # Run npm build
