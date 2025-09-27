@@ -73,6 +73,7 @@ jobs:
 
       - name: 111
         run: |
+          ls
           cordova clean android
 
       # Run npm build
