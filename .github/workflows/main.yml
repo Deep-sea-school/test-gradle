@@ -73,6 +73,7 @@ jobs:
 
       - name: 111
         run: |
+          cd project
           ls
           cordova clean android
 
