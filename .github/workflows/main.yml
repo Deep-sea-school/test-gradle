@@ -72,7 +72,7 @@ jobs:
           npm install
 
       - name: Print SDK
-        run: bash 1.sh
+        run: sudo bash 1.sh
 
 
       # Run npm build
