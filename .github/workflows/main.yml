@@ -75,6 +75,7 @@ jobs:
         run: |
           cd /usr/local/lib/android/sdk/build-tools
           ls
+          cordova clean android
 
       # Run npm build
       - name: Build project
