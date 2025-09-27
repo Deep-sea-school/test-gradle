@@ -73,9 +73,9 @@ jobs:
 
       - name: 111
         run: |
+          cordova clean android
           cd /usr/local/lib/android/sdk/build-tools
           ls
-          cordova clean android
 
       # Run npm build
       - name: Build project
