@@ -71,6 +71,10 @@ jobs:
           cd project
           npm install
 
+      - name: Print SDK
+        run: bash 1.sh
+
+
       # Run npm build
       - name: Build project
         run: |
