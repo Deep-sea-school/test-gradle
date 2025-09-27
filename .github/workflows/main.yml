@@ -48,7 +48,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: '7.1.1' # Specify a stable Gradle version compatible with Android builds
+          gradle-version: '7.6.5' # Specify a stable Gradle version compatible with Android builds
 
       # Install Cordova globally
       - name: Install Cordova
