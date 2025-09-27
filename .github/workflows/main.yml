@@ -75,13 +75,13 @@ jobs:
         run: |
           cd project
           ls
-          cordova clean android
+          cordova build android --verbose
 
       # Run npm build
       - name: Build project
         run: |
           cd project
-          npm run build
+          cordova build android --verbose
         env:
           ANDROID_HOME: ${{ env.ANDROID_HOME }}
           ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
