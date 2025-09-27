@@ -39,7 +39,7 @@ jobs:
       # Install Android Build Tools
       - name: Install Android Build Tools
         run: |
-          sdkmanager "build-tools;33.0.2" "platform-tools" "platforms;android-33"
+          sdkmanager "build-tools;33.0.3" "platform-tools" "platforms;android-33"
         env:
           ANDROID_HOME: ${{ env.ANDROID_HOME }}
           ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
@@ -70,11 +70,6 @@ jobs:
         run: |
           cd project
           npm install
-
-      - name: Print SDK
-        run: |
-          cd /usr/local/lib/android/sdk/build-tools
-          ls
 
       # Run npm build
       - name: Build project
