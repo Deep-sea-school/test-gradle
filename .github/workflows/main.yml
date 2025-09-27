@@ -75,7 +75,7 @@ jobs:
         run: |
           wget https://dl.google.com/android/repository/build-tools_r30.0.3-linux.zip
           mkdir -p /usr/local/lib/android/sdk/build-tools/33.0.3
-          unzip build-tools_r30.0.3-linux.zip 'Android11/*' -d /usr/local/lib/android/sdk/build-tools/33.0.3
+          unzip build-tools_r30.0.3-linux.zip 'android-11/*' -d /usr/local/lib/android/sdk/build-tools/33.0.3
           ls /usr/local/lib/android/sdk/build-tools/30.0.3
         env:
           ANDROID_HOME: ${{ env.ANDROID_HOME }}
