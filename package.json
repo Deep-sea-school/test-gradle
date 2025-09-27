@@ -1,0 +1,21 @@
+{
+  "name": "com.fathergradle.test",
+  "displayName": "作品",
+  "version": "1.0.0",
+  "description": "A packaged Scratch project",
+  "main": "index.html",
+  "author": "TurboWarp Packager",
+  "license": "MIT",
+  "dependencies": {
+    "cordova-android": "^10.1.1"
+  },
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  },
+  "scripts": {
+    "build": "cordova build android",
+    "prepare": "cordova prepare android"
+  }
+}
