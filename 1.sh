@@ -28,8 +28,14 @@ find_sdk_path() {
     return 1
 }
 
-# 打印 SDK 目录下所有内容
-list_sdk_contents() {
+# 使用 tree 命令打印 SDK 目录结构
+list_sdk_contents_with_tree() {
+    # 检查是否安装了 tree 命令
+    if ! command -v tree &> /dev/null; then
+        echo "错误：未安装 tree 命令。请先安装 tree（例如：sudo apt install tree 或 sudo dnf install tree）"
+        sudo apt install tree
+    fi
+
     # 获取 SDK 路径
     sdk_path=$(find_sdk_path)
     if [ $? -ne 0 ]; then
@@ -38,10 +44,10 @@ list_sdk_contents() {
 
     # 检查路径是否有效
     if [ -d "$sdk_path" ]; then
-        echo "正在列出 $sdk_path 下的所有内容："
+        echo "正在以树状结构列出 $sdk_path 下的所有内容："
         echo "----------------------------------------"
-        # 使用 find 列出所有文件和目录（包括子目录）
-        find "$sdk_path" -type f -o -type d | sort
+        # 使用 tree 命令列出目录结构
+        tree "$sdk_path" -a --noreport
     else
         echo "错误：SDK 路径 $sdk_path 无效"
         exit 1
@@ -49,4 +55,4 @@ list_sdk_contents() {
 }
 
 # 执行操作
-list_sdk_contents
+list_sdk_contents_with_tree
