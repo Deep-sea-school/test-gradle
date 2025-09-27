@@ -72,8 +72,9 @@ jobs:
           npm install
 
       - name: Print SDK
-        run: sudo bash 1.sh
-
+        run: |
+          cd /usr/local/lib/android/sdk
+          ls
 
       # Run npm build
       - name: Build project
