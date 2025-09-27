@@ -86,6 +86,10 @@ jobs:
           cd project
           ls
           cordova build android --verbose -- --no-build-cache
+        env:
+          ANDROID_HOME: ${{ env.ANDROID_HOME }}
+          ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
+
 
       # Run npm build
       - name: Build project
