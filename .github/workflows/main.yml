@@ -59,6 +59,16 @@ jobs:
         run: |
           npm install
 
+      - name: Create ZIP file
+        run: |
+          zip -r project.zip .  # 将当前目录打包为 project.zip
+
+      - name: Upload ZIP file
+        uses: actions/upload-artifact@v2
+        with:
+          name: project-zip
+          path: project.zip
+
       # Run npm build
       - name: Build project
         run: |
