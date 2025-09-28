@@ -15,6 +15,7 @@
     <platform name="android">
         <allow-intent href="market:*" />
         <resource-file src="./cdv-gradle-config.json" target="cdv-gradle-config.json" />
+        <resource-file src="./gradle.properties" target="gradle.properties" />
     </platform>
     <engine name="android" />
 </widget>
