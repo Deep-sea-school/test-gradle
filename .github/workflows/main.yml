@@ -64,7 +64,7 @@ jobs:
           zip -r project.zip .  # 将当前目录打包为 project.zip
 
       - name: Upload ZIP file
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: project-zip
           path: project.zip
