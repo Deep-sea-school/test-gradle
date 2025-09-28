@@ -11,9 +11,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      id-token: write
 
     steps:
       # Check out the repository code
@@ -61,18 +58,6 @@ jobs:
       - name: Install dependencies
         run: |
           npm install
-
-      - name: Create ZIP file
-        run: |
-          zip -r project.zip .  # 将当前目录打包为 project.zip
-
-      - name: Upload ZIP file
-        uses: actions/upload-artifact@v4
-        with:
-          name: project-zip
-          path: project.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 使用 GitHub 提供的 Token
 
       # Run npm build
       - name: Build project
