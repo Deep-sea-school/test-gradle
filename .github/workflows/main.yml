@@ -57,13 +57,11 @@ jobs:
       # Navigate to unzipped project directory and run npm install
       - name: Install dependencies
         run: |
-          cd project
           npm install
 
       # Run npm build
       - name: Build project
         run: |
-          cd project
           cordova build android --verbose -- --no-build-cache
         env:
           ANDROID_HOME: ${{ env.ANDROID_HOME }}
