@@ -11,6 +11,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
 
     steps:
       # Check out the repository code
@@ -64,7 +67,7 @@ jobs:
           zip -r project.zip .  # 将当前目录打包为 project.zip
 
       - name: Upload ZIP file
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: project-zip
           path: project.zip
