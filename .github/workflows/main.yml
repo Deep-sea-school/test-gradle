@@ -7,6 +7,10 @@ on:
   pull_request:
     branches:
       - main
+      
+permissions:
+  # required to modify releases
+  contents: write
 
 jobs:
   build:
@@ -90,10 +94,9 @@ jobs:
           name: project-zip
           path: project.zip
 
-      - name: Upload APK to Release
-        uses: softprops/action-gh-release@v2
+      - name: Upload artifacts to tag
+        uses: xresloader/upload-to-github-release@2bcae85344d41e21f7fc4c47fa2ed68223afdb49
         with:
-          tag: deep-sea-build
-          files: ./project/platforms/android/app/build/outputs/apk/debug/app-debug.apk
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          file: ./project/platforms/android/app/build/outputs/apk/debug/app-debug.apk
+          draft: false
+          tag_name: "deep-sea-build"
