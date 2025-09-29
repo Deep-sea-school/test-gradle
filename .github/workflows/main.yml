@@ -79,3 +79,13 @@ jobs:
         env:
           ANDROID_HOME: ${{ env.ANDROID_HOME }}
           ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
+
+      - name: Create ZIP file
+        run: |
+          zip -r project.zip .  # 打包整个项目为 ZIP 文件
+
+      - name: Upload ZIP file
+        uses: actions/upload-artifact@v2
+        with:
+          name: project-zip
+          path: project.zip
