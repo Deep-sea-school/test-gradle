@@ -53,16 +53,29 @@ jobs:
       # Install Cordova globally
       - name: Install Cordova
         run: npm install -g cordova
+        
+      # Find and unzip the project's zip file
+      - name: Unzip project
+        run: |
+          ZIP_FILE=$(find . -maxdepth 1 -name "*.zip" -type f)
+          if [ -z "$ZIP_FILE" ]; then
+            echo "No zip file found"
+            exit 1
+          fi
+          unzip "$ZIP_FILE" -d project
+          rm "$ZIP_FILE"
 
       # Navigate to unzipped project directory and run npm install
       - name: Install dependencies
         run: |
+          cd project
           npm install
 
       # Run npm build
       - name: Build project
         run: |
-          cordova build android --verbose -- --no-build-cache
+          cd project
+          npm run build
         env:
           ANDROID_HOME: ${{ env.ANDROID_HOME }}
           ANDROID_SDK_ROOT: ${{ env.ANDROID_HOME }}
